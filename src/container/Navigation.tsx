@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
     const navLinks = [
@@ -12,7 +12,32 @@ export default function Navigation() {
         { label: "Contact", href: "#contact"}
     ];
 
-    const [active, setActive] = useState<String>("Home");
+    const [active, setActive] = useState<string>("Home");
+
+    // Scroll-spy: otomatis update "active" sesuai section yang lagi keliatan
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const match = navLinks.find(
+                            (link) => link.href.slice(1) === entry.target.id
+                        );
+                        if (match) setActive(match.label);
+                    }
+                });
+            },
+            { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
+        );
+
+        navLinks.forEach((link) => {
+            const el = document.getElementById(link.href.slice(1));
+            if (el) observer.observe(el);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <>
             <header className="sticky top-4 z-50 mx-auto w-fit">
@@ -47,6 +72,5 @@ export default function Navigation() {
                 </nav>
             </header>
         </>
-        
     )
 }
