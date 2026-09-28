@@ -25,14 +25,14 @@ export default function AboutSection() {
         <>
             <section id="about" className="relative bg-background text-secondary py-24 px-6 overflow-hidden">
                 <div className="absolute inset-0 pointer-events-none">
-                    <span className="absolute top-10 left-10 w-1 h-1 bg-white/40 rounded-full" />
-                    <span className="absolute top-24 right-1/3 w-1 h-1 bg-white/40 rounded-full" />
-                    <span className="absolute bottom-20 left-1/4 w-1 h-1 bg-white/40 rounded-full" />
+                    <span className="absolute top-10 left-10 w-1 h-1 bg-primary/40 rounded-full" />
+                    <span className="absolute top-24 right-1/3 w-1 h-1 bg-primary/40 rounded-full" />
+                    <span className="absolute bottom-20 left-1/4 w-1 h-1 bg-primary/40 rounded-full" />
                 </div>
 
                 {/* header */}
                 <div className="text-center mb-16 relative z-10">
-                    <h2 className="text-4xl md:text-5xl font-bold">
+                    <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                         About Me
                     </h2>
                     <p className="text-foreground mt-3">"A Dreamer, that's who she is"</p>

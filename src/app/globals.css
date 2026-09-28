@@ -1,27 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0D0E20; /* background utama */
-  --surface: #2D1C7F; /* card/nav surface */
-  --primary: #7546EB; /* aksen utama/border */
-  --secondary: #C8B3F6; /* hover */
-  --foreground: #B0A9E5; /* teks sekunder/muted */
+  --background: #F3EEFB; /* background utama */
+  --surface: #FFFFFF; /* card/nav surface */
+  --primary: #7C4FE0; /* aksen utama/border */
+  --secondary: #6B5B95; /* hover */
+  --foreground: #2A2438; /* teks sekunder/muted */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
-  --color-primary: var(--surface);
+  --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --font-sans: var(--font-montserrat);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

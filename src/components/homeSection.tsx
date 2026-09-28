@@ -3,7 +3,7 @@ export default function HomeSection() {
         <>
             <section id="home" className="relative flex min-h-screen flex-col justify-center overflow-hidden">
                 <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
-                    <p className="mb-4 text-lg text-white/60">Hey, I&apos;m</p>
+                    <p className="mb-4 text-lg text-secondary">Hey, I&apos;m</p>
 
                     <h1 className="text-8xl font-bold tracking-tight text-secondary sm:text-6xl">
                     Michelle Hiu
@@ -26,12 +26,12 @@ export default function HomeSection() {
                         Let&apos;s Connect
                         <span aria-hidden="true">→</span>
                     </a>
-                    <span className="flex items-center gap-2 text-white/60">
+                    <span className="flex items-center gap-2 text-secondary">
                         michelle.hiu05.com
                         <button
                         type="button"
                         aria-label="Copy email"
-                        className="rounded p-1 hover:bg-white/10 transition-colors"
+                        className="rounded p-1 hover:bg-primary/10 transition-colors"
                         onClick={() => navigator.clipboard.writeText('hi@abhayrana.com')}
                         >
                         ⧉
@@ -40,7 +40,7 @@ export default function HomeSection() {
                     </div>
                 </div>
 
-                <div className="relative z-10 flex justify-center pb-10 text-white/40">
+                <div className="relative z-10 flex justify-center pb-10 text-secondary/60">
                     <span className="animate-bounce">↓</span>
                 </div>
 
