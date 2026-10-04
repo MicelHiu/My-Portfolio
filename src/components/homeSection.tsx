@@ -9,7 +9,7 @@ export default function HomeSection() {
                     Michelle Hiu
                     </h1>
 
-                    <span className="mt-6 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-foreground">
+                    <span className="mt-6 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white">
                     Software Engineer
                     </span>
 

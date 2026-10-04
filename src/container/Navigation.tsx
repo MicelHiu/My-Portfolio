@@ -68,8 +68,7 @@ export default function Navigation() {
 
                     <Link
                         href="#resume"
-                        className="rounded-full px-4 py-2 text-sm font-semibold bg-secondary text-surface
-                        hover:bg-surface hover:text-foreground"
+                        className="rounded-full px-4 py-2 text-sm font-semibold bg-secondary text-surface hover:bg-surface hover:text-foreground"
                     >
                         Resume
                     </Link>

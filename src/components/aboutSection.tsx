@@ -41,10 +41,11 @@ export default function AboutSection() {
                 {/* content */}
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
                     <div className="relative w-full h-[420px] rounded-2xl overflow-hidden">
-                        <Image 
+                        <Image
                             src="/images/aboutMe.jpeg"
                             alt="Profile Photo"
                             fill
+                            sizes="(min-width: 768px) 50vw, 100vw"
                             className="object-cover"
                         />
                     </div>
