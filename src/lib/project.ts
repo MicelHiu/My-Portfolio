@@ -63,10 +63,6 @@ const projects: Project[] = [
         ],
         githubUrl: "https://github.com/MicelHiu/milestone-1-MicelHiu.git"
     },
-    {
-        title: "Skin Tone Detector",
-        description: ""
-    }
 ];
 
 export function getProjects(): Project[] {

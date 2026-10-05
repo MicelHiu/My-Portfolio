@@ -14,28 +14,37 @@ export default function Navigation() {
 
     const [active, setActive] = useState<string>("Home");
 
-    // Scroll-spy: otomatis update "active" sesuai section yang lagi keliatan
+    // Scroll-spy: section aktif = section terakhir yang bagian atasnya sudah melewati 40% tinggi layar
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const match = navLinks.find(
-                            (link) => link.href.slice(1) === entry.target.id
-                        );
-                        if (match) setActive(match.label);
-                    }
-                });
-            },
-            { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
-        );
+        const ids = navLinks.map((link) => link.href.slice(1));
+        let raf = 0;
 
-        navLinks.forEach((link) => {
-            const el = document.getElementById(link.href.slice(1));
-            if (el) observer.observe(el);
-        });
+        const update = () => {
+            raf = 0;
+            const line = window.innerHeight * 0.4;
+            const atBottom =
+                window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+            let current = navLinks[0].label;
+            ids.forEach((id, i) => {
+                const el = document.getElementById(id);
+                if (el && el.getBoundingClientRect().top <= line) current = navLinks[i].label;
+            });
+            if (atBottom) current = navLinks[navLinks.length - 1].label;
+            setActive(current);
+        };
 
-        return () => observer.disconnect();
+        const onScroll = () => {
+            if (!raf) raf = requestAnimationFrame(update);
+        };
+
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        return () => {
+            cancelAnimationFrame(raf);
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+        };
     }, []);
 
     return (
