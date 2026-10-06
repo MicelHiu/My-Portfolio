@@ -277,7 +277,7 @@ export default function ProjectsSection() {
     };
 
     return (
-        <section id="projects" className="relative bg-background py-24 overflow-hidden">
+        <section id="projects" className="relative py-24 overflow-hidden">
             <div className="text-center mb-12 px-6">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground">Projects</h2>
                 <p className="text-secondary mt-3">
