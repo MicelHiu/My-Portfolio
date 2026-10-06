@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RESUME_FILENAME, RESUME_URL } from "@/lib/resume";
+import ThemeToggle from "@/components/themeToggle";
 
 export default function Navigation() {
     const navLinks = [
@@ -77,13 +78,16 @@ export default function Navigation() {
                         })}
                     </div>
 
-                    <a
-                        href={RESUME_URL}
-                        download={RESUME_FILENAME}
-                        className="rounded-full px-4 py-2 text-sm font-semibold bg-secondary text-surface hover:bg-surface hover:text-foreground"
-                    >
-                        My Resume
-                    </a>
+                    <div className="flex items-center gap-2">
+                        <ThemeToggle />
+                        <a
+                            href={RESUME_URL}
+                            download={RESUME_FILENAME}
+                            className="rounded-full px-4 py-2 text-sm font-semibold bg-secondary text-surface hover:bg-surface hover:text-foreground"
+                        >
+                            My Resume
+                        </a>
+                    </div>
                 </nav>
             </header>
         </>

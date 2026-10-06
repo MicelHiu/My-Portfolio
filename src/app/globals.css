@@ -8,6 +8,19 @@
   --foreground: #2A2438; /* teks sekunder/muted */
 }
 
+[data-theme="dark"] {
+  --background: #14101F;
+  --surface: #1E1830;
+  --primary: #8F6BEA;
+  --secondary: #B3A6D6;
+  --foreground: #EDE8F7;
+}
+
+:root { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

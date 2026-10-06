@@ -25,7 +25,7 @@ const categories: SkillCategory[] = [
         { name: "PHP", icon: SiPhp, color: "#fb9600" },
     ]},
     { title: "Frameworks & Libraries", skills: [
-        { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+        { name: "Next.js", icon: SiNextdotjs, color: "var(--foreground)" },
         { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D" },
         { name: "Nest.js", icon: SiNestjs, color: "#E0234E" },
         { name: "Prisma", icon: SiPrisma, color: "#5A67D8" },
@@ -41,7 +41,7 @@ const categories: SkillCategory[] = [
         { name: "Git", icon: SiGit, color: "#F05032" },
         { name: "VS Code", icon: VscVscode, color: "#007ACC" },
         { name: "Docker", icon: SiDocker, color: "#2496ED" },
-        { name: "Vercel", icon: SiVercel, color: "#000000" },
+        { name: "Vercel", icon: SiVercel, color: "var(--foreground)" },
         { name: "Laragon", icon: SiLaragon, color: "#0E83CD" },
         { name: "Figma", icon: SiFigma, color: "#F24E1E" },
         { name: "Linux", icon: SiLinux, color: "#FCC624" },
