@@ -20,7 +20,7 @@ export default function HomeSection() {
 
                     <div className="mt-10 flex items-center gap-4">
                     <a
-                        href="#connect"
+                        href="#contact"
                         className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-white transition-transform hover:scale-105"
                     >
                         Let&apos;s Connect

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { RESUME_FILENAME, RESUME_URL } from "@/lib/resume";
 
 export default function Navigation() {
     const navLinks = [
@@ -76,12 +77,13 @@ export default function Navigation() {
                         })}
                     </div>
 
-                    <Link
-                        href="#resume"
+                    <a
+                        href={RESUME_URL}
+                        download={RESUME_FILENAME}
                         className="rounded-full px-4 py-2 text-sm font-semibold bg-secondary text-surface hover:bg-surface hover:text-foreground"
                     >
-                        Resume
-                    </Link>
+                        My Resume
+                    </a>
                 </nav>
             </header>
         </>

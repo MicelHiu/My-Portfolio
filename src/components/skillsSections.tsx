@@ -5,7 +5,7 @@ const SECONDS_PER_CHIP = 3;
 
 export default function SkillsSections() {
     return (
-        <section id="skills" className="bg-background py-24 overflow-hidden">
+        <section id="skills" className="py-24 overflow-hidden">
             <div className="text-center mb-16 px-6">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground">Skills</h2>
                 <p className="text-secondary mt-3">Technologies and tools I have worked with.</p>

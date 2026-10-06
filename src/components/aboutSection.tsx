@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Quote, TrendingUp, University } from "lucide-react";
+import { GraduationCap, MapPin, Quote, TrendingUp, University } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutSection() {
@@ -14,6 +14,13 @@ export default function AboutSection() {
             icon: <University className="w-6 h-6 text-foreground" />,
             label: "Education",
             value: "Kalbis University",
+            detail: "Informatics • 2023 - 2027",
+        },
+        {
+            icon: <GraduationCap className="w-6 h-6 text-foreground" />,
+            label: "High School",
+            value: "SMAK 2 PENABUR Jakarta",
+            detail: "2020 - 2023 • 91.61/100",
         },
         {
             icon: <TrendingUp className="w-6 h-6 text-foreground" />,
@@ -23,7 +30,7 @@ export default function AboutSection() {
     ]
     return (
         <>
-            <section id="about" className="relative bg-background text-secondary py-24 px-6 overflow-hidden">
+            <section id="about" className="relative text-secondary py-24 px-6 overflow-hidden">
                 <div className="absolute inset-0 pointer-events-none">
                     <span className="absolute top-10 left-10 w-1 h-1 bg-primary/40 rounded-full" />
                     <span className="absolute top-24 right-1/3 w-1 h-1 bg-primary/40 rounded-full" />
@@ -52,9 +59,7 @@ export default function AboutSection() {
 
                     <div>
                         <p className="text-foreground leading-relaxed text-lg mb-10">
-                            A final year informatics student who has big dreams, building apps and online experiences to learn and grow as a developer.
-                            <br/><br/>
-                            I believe dreamers are the ones who build the future. Being a dreamer, to me, means thinking beyond limitations while staying grounded in execution. With these mindset, I channel into building practical, impactful digital solutions from websites to full-stack apps with a focus on a clean and structured code. I approach every project with professionalism, curiosity, and a strong willingness to learn, while continuously delivering value and contributing meaningfully to every team I am part of.
+                            I'm a final-year Informatics student who learns by building, from websites to full-stack apps. I like to dream big but stay grounded in execution, writing clean, structured code and approaching every project with curiosity and professionalism. I'm always looking for ways to grow and to contribute meaningfully to the team around me.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4">
@@ -68,6 +73,9 @@ export default function AboutSection() {
                                     <span className="font-semibold text-foreground text-sm">
                                         {item.value}
                                     </span>
+                                    {item.detail && (
+                                        <span className="text-xs text-secondary">{item.detail}</span>
+                                    )}
                                 </div>
                             ))}
                         </div>
