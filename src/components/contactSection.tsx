@@ -1,5 +1,5 @@
 import { Mail, MapPin } from "lucide-react";
-import { getContact } from "@/lib/contact";
+import { getContact, getGmailComposeUrl } from "@/lib/contact";
 
 export default function ContactSection() {
     const { email, location, socials } = getContact();
@@ -42,7 +42,9 @@ export default function ContactSection() {
 
             <div className="mt-10 text-center">
                 <a
-                    href={`mailto:${email}`}
+                    href={getGmailComposeUrl(email, "Hello Michelle", "Hi Michelle,\n\n")}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 rounded-xl bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary/30 transition-colors hover:bg-secondary"
                 >
                     <Mail className="h-5 w-5" />
