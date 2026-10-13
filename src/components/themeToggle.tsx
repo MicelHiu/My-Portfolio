@@ -1,8 +1,20 @@
 "use client";
 
+import { useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
+    useEffect(() => {
+        let theme: string | null = null;
+        try {
+            theme = localStorage.getItem("theme");
+        } catch {}
+        if (theme !== "dark" && theme !== "light") {
+            theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+    }, []);
+
     const toggle = () => {
         const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
         document.documentElement.dataset.theme = next;

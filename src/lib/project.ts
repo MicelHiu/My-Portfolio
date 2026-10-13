@@ -52,7 +52,7 @@ const projects: Project[] = [
     },
     {
         title: "Portfolio Website v1.0",
-        description: "TMy first personal portfolio website, designed to showcase my projects, skills, and background. Built with HTML and CSS as a practice project to strengthen my fundamental web development skills.",
+        description: "My first personal portfolio website, designed to showcase my projects, skills, and background. Built with HTML and CSS as a practice project to strengthen my fundamental web development skills.",
         images: [
             "/images/portfolio/home.png",
             "/images/portfolio/about.png",
@@ -63,6 +63,33 @@ const projects: Project[] = [
         ],
         githubUrl: "https://github.com/MicelHiu/milestone-1-MicelHiu.git"
     },
+    {
+        title: "Skin Tone Detector",
+        description: "A web-based skin tone detection application that analyzes users' skin color using Hue calculations to provide personalized makeup recommendations. Built with Python, OpenCV, and Streamlit to practice image processing and computer vision.",
+        images: [
+            "/images/skintone/description.png",
+            "/images/skintone/detector.png",
+            "/images/skintone/result.png",
+            "/images/skintone/team.png",
+        ],
+        tags: [
+            "Python", "OpenCV", "Streamlit"
+        ],
+        githubUrl: "https://github.com/awliapasa/Skin-Tone.git"
+    },
+    {
+        title: "Kandep - Search Engine",
+        description: "A tenant recommendation website for the canteen in front of Kalbis University, helping students discover tenants that match their preferences using a machine learning model. Developed as a final exam (UAS) project.",
+        images: [
+            "/images/kandep/home.png",
+            "/images/kandep/result.png",
+            "/images/kandep/team.png",
+        ],
+        tags: [
+            "Python", "Scikit-Learn", "Streamlit"
+        ],
+        githubUrl: "https://github.com/MicelHiu/Kandep-Website-Streamlit.git"
+    }
 ];
 
 export function getProjects(): Project[] {
