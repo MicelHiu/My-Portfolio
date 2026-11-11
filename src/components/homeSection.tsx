@@ -1,4 +1,36 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const roles = ["Full-Stack Developer", "Frontend Developer", "Backend Developer"];
+
+function useTypewriter(words: string[], typeSpeed = 90, deleteSpeed = 50, pause = 1500) {
+    const [index, setIndex] = useState(0);
+    const [text, setText] = useState("");
+    const [deleting, setDeleting] = useState(false);
+
+    useEffect(() => {
+        const word = words[index];
+        let delay = deleting ? deleteSpeed : typeSpeed;
+
+        if(!deleting && text === word) delay = pause;
+        const timer = setTimeout(() => {
+            if(!deleting && text === word) {
+                setDeleting(true);
+            } else if(deleting && text === "") {
+                setDeleting(false);
+                setIndex((i) => (i+1)%words.length);
+            } else {
+                setText(word.slice(0, text.length + (deleting ? -1 : 1)));
+            }
+        }, delay);
+
+        return () => clearTimeout(timer);
+    }, [text, deleting, index, words, typeSpeed, deleteSpeed, pause]);
+    return text;
+}
 export default function HomeSection() {
+    const role = useTypewriter(roles);
     return (
         <>
             <section id="home" className="relative flex min-h-screen flex-col justify-center overflow-hidden">
@@ -9,8 +41,9 @@ export default function HomeSection() {
                     Michelle Hiu
                     </h1>
 
-                    <span className="mt-6 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white">
-                    Software Engineer
+                    <span className="mt-6 text-2xl font-semibold text-white">
+                        {role}
+                        <span className="ml-0.5 inline-block w-[2px] animate-pulse bg-primary align-middle">&nbsp;</span>    
                     </span>
 
                     <p className="mt-8 max-w-xl text-xl text-foreground sm:text-2xl">
@@ -27,7 +60,7 @@ export default function HomeSection() {
                         <span aria-hidden="true">→</span>
                     </a>
                     <span className="flex items-center gap-2 text-secondary">
-                        michelle.hiu05.com
+                        michelle.hiu05@gmail.com
                         <button
                         type="button"
                         aria-label="Copy email"
