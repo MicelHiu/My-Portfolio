@@ -1,14 +1,15 @@
 "use client";
 
 import Navigation from "@/container/Navigation";
-import HomeSection from "@/components/homeSection";
-import AboutSection from "@/components/aboutSection";
-import ProjectsSection from "@/components/projectSection";
-import SkillsSections from "@/components/skillsSections";
-import ExperienceSection from "@/components/experienceSection";
-import ContactSection from "@/components/contactSection";
+import HomeSection from "@/components/home/homeSection";
+import AboutSection from "@/components/about/aboutSection";
+import ProjectsSection from "@/components/project/projectSection";
+import SkillsSections from "@/components/skills/skillsSections";
+import ExperienceSection from "@/components/experience/experienceSection";
+import ContactSection from "@/components/contact/contactSection";
 import Footer from "@/container/Footer";
 import StarsBackground from "@/components/starsBackground";
+import ScrollToTop from "@/components/home/scrollToTop";
 export default function Dashboard() {
     return (
         <>
@@ -21,6 +22,7 @@ export default function Dashboard() {
             <ExperienceSection />
             <ContactSection />
             <Footer />
+            <ScrollToTop />
         </>
     )
 }
