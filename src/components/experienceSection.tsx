@@ -11,7 +11,7 @@ export default function ExperienceSection() {
             </div>
 
             <div className="max-w-6xl mx-auto px-6">
-              <div className="relative">
+                <div className="relative">
                 {/* garis timeline: berakhir tepat di card "Want to know more?" */}
                 <div className="absolute left-[7px] top-8 bottom-0 w-0.5 bg-primary" />
 
@@ -65,25 +65,25 @@ export default function ExperienceSection() {
                     </div>
                 ))}
 
-              </div>
+                </div>
 
               {/* penutup timeline */}
-              <div className="rounded-2xl border border-primary/30 bg-surface px-6 py-14 text-center">
-                <h3 className="text-3xl md:text-4xl font-bold text-foreground">
-                    Your team could be my next chapter<span className="text-primary">!</span>
-                </h3>
-                <p className="mx-auto mt-4 max-w-2xl text-secondary">
-                    Open to new opportunities and collaborations. Let's connect and explore how I can contribute to your team.
-                </p>
-                <a
-                    href={RESUME_URL}
-                    download={RESUME_FILENAME}
-                    className="mt-8 inline-flex items-center gap-2 rounded-xl border border-primary bg-primary/10 px-6 py-3 font-medium text-primary transition-colors hover:bg-primary hover:text-white"
-                >
-                    <Download className="h-5 w-5" />
-                    Download Resume
-                </a>
-              </div>
+                <div className="rounded-2xl border border-primary/30 bg-surface px-6 py-14 text-center">
+                    <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+                        Your team could be my next chapter<span className="text-primary">!</span>
+                    </h3>
+                    <p className="mx-auto mt-4 max-w-2xl text-secondary">
+                        Open to new opportunities and collaborations. Let's connect and explore how I can contribute to your team.
+                    </p>
+                    <a
+                        href={RESUME_URL}
+                        download={RESUME_FILENAME}
+                        className="mt-8 inline-flex items-center gap-2 rounded-xl border border-primary bg-primary/10 px-6 py-3 font-medium text-primary transition-colors hover:bg-primary hover:text-white"
+                    >
+                        <Download className="h-5 w-5" />
+                        Download Resume
+                    </a>
+                </div>
             </div>
         </section>
     );
