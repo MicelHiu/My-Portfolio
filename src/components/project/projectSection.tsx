@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { FaGithub } from "react-icons/fa";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { getProjects, type Project } from "@/lib/project";
+import ProjectModal from "./projectModal";
 
 
-function ProjectCard({ project }: {project: Project}) {
+function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void }) {
     const [activeImage, setActiveImage] = useState(0);
     const trackref = useRef<HTMLDivElement>(null);
 
@@ -17,7 +17,7 @@ function ProjectCard({ project }: {project: Project}) {
         track.scrollTo({ left: index * track.clientWidth, behavior: "smooth" });
     };
 
-    //dipanggil dari button, cegah <a></a> ikut ke klik
+    // dipanggil dari button, cegah klik ikut membuka modal
     const handleClick = (e: React.MouseEvent, index: number) => {
         e.preventDefault();
         e.stopPropagation();
@@ -34,18 +34,25 @@ function ProjectCard({ project }: {project: Project}) {
     const last = project.images.length - 1;
     
     return (
-        <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col w-full bg-surface border border-primary rounded-xl overflow-hidden hover:border-secondary transition-colors"
+        <div
+            role="button"
+            tabIndex={0}
+            onClick={onOpen}
+            onKeyDown={(e) => {
+                if (e.target !== e.currentTarget) return; // abaikan Enter dari tombol slider
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onOpen();
+                }
+            }}
+            className="group flex w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-primary bg-surface transition-colors hover:border-secondary"
         >
-            <div className="relative w-full h-[200px]">
+            <div className="relative w-full h-50">
                 {/* track slider */}
                 <div
                     ref={trackref}
                     onScroll={handleScroll}
-                    className="flex h-full overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    className="flex h-full overflow-x-auto snap-x snap-mandatory scrollbar-none [&::-webkit-scrollbar]:hidden"
                 >
                     {project.images.map((src, index) => (
                         <div key={src} className="relative h-full w-full shrink-0 snap-center">
@@ -120,11 +127,10 @@ function ProjectCard({ project }: {project: Project}) {
                 </div>
 
                 <div className="mt-auto flex items-center gap-2 text-sm text-secondary group-hover:text-foreground transition-colors">
-                    <FaGithub className="w-4 h-4" />
-                    View on GitHub
+                    View Details →
                 </div>
             </div>
-        </a>
+        </div>
     );
 }
 
@@ -134,6 +140,7 @@ const GAP = 32;
 
 export default function ProjectsSection() {
     const projects = getProjects();
+    const [selected, setSelected] = useState<Project | null>(null);
     const viewportRef = useRef<HTMLDivElement>(null);
     const trackRef = useRef<HTMLDivElement>(null);
     const [atStart, setAtStart] = useState(true);
@@ -295,12 +302,12 @@ export default function ProjectsSection() {
                     onClickCapture={onClickCapture}
                     onWheel={onWheel}
                     onDragStart={(e) => e.preventDefault()}
-                    className="overflow-hidden pb-4 [container-type:inline-size] cursor-grab active:cursor-grabbing select-none touch-pan-y"
+                    className="overflow-hidden pb-4 @container cursor-grab active:cursor-grabbing select-none touch-pan-y"
                 >
                     <div ref={trackRef} className="flex w-max will-change-transform" style={{ gap: GAP }}>
                         {projects.map((project) => (
                             <div key={project.title} className="flex w-[100cqw] md:w-[calc((100cqw-4rem)/3)] shrink-0">
-                                <ProjectCard project={project} />
+                                <ProjectCard project={project} onOpen={() => setSelected(project)} />
                             </div>
                         ))}
                     </div>
@@ -323,6 +330,10 @@ export default function ProjectsSection() {
                     <ChevronRight className="h-5 w-5" />
                 </button>}
             </div>
+
+            {selected && (
+                <ProjectModal project={selected} onClose={() => setSelected(null)} />
+            )}
         </section>
     );
 }

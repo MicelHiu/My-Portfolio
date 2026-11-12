@@ -10,17 +10,18 @@ import ContactSection from "@/components/contact/contactSection";
 import Footer from "@/container/Footer";
 import StarsBackground from "@/components/starsBackground";
 import ScrollToTop from "@/components/home/scrollToTop";
+import Reveal from "@/components/reveal";
 export default function Dashboard() {
     return (
         <>
             <StarsBackground />
             <Navigation />
             <HomeSection />
-            <AboutSection />
-            <ProjectsSection />
-            <SkillsSections />
-            <ExperienceSection />
-            <ContactSection />
+            <Reveal><AboutSection /></Reveal>
+            <Reveal><ProjectsSection /></Reveal>
+            <Reveal><SkillsSections /></Reveal>
+            <Reveal><ExperienceSection /></Reveal>
+            <Reveal><ContactSection /></Reveal>
             <Footer />
             <ScrollToTop />
         </>

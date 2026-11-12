@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, MapPin, Quote, TrendingUp, University } from "lucide-react";
+import { MapPin, TrendingUp } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutSection() {
@@ -9,18 +9,6 @@ export default function AboutSection() {
             icon: <MapPin className="w-6 h-6 text-foreground" />,
             label: "Domicile",
             value: "Jakarta, Indonesia",
-        },
-        {
-            icon: <University className="w-6 h-6 text-foreground" />,
-            label: "Education",
-            value: "Kalbis University",
-            detail: "Informatics • 2023 - 2027",
-        },
-        {
-            icon: <GraduationCap className="w-6 h-6 text-foreground" />,
-            label: "High School",
-            value: "SMAK 2 PENABUR Jakarta",
-            detail: "2020 - 2023 • 91.61/100",
         },
         {
             icon: <TrendingUp className="w-6 h-6 text-foreground" />,
@@ -73,9 +61,6 @@ export default function AboutSection() {
                                     <span className="font-semibold text-foreground text-sm">
                                         {item.value}
                                     </span>
-                                    {item.detail && (
-                                        <span className="text-xs text-secondary">{item.detail}</span>
-                                    )}
                                 </div>
                             ))}
                         </div>

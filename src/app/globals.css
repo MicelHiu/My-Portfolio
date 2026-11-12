@@ -67,7 +67,21 @@ body {
   to { transform: translateY(-100vh); }
 }
 
+/* scroll reveal (components/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  translate: 0 1.5rem;
+  transition: opacity 0.7s ease-out, translate 0.7s ease-out;
+}
+
+/* translate: none (bukan 0) supaya modal position:fixed di dalamnya tidak ter-offset */
+.reveal.is-visible {
+  opacity: 1;
+  translate: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
   .star-layer { animation: none !important; }
+  .reveal { opacity: 1; translate: none; transition: none; }
 }

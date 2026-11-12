@@ -78,7 +78,7 @@ const projects: Project[] = [
         githubUrl: "https://github.com/awliapasa/Skin-Tone.git"
     },
     {
-        title: "Kandep - Search Engine",
+        title: "Tenant Recommendation",
         description: "A tenant recommendation website for the canteen in front of Kalbis University, helping students discover tenants that match their preferences using a machine learning model. Developed as a final exam (UAS) project.",
         images: [
             "/images/kandep/home.png",

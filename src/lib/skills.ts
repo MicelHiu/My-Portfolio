@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { SiJavascript, SiTypescript, SiHtml5, SiCss, SiPython, SiCplusplus, SiNextdotjs, SiOpenjdk,  SiVuedotjs, SiNestjs, SiPrisma, SiLaravel, SiLaragon, SiFlutter, SiDotnet, SiPostgresql, SiMysql, SiGit, SiDocker, SiVercel, SiFigma, SiLinux, SiPhp, } from "react-icons/si";
+import { SiJavascript, SiTypescript, SiHtml5, SiCss, SiPython, SiCplusplus, SiNextdotjs, SiOpenjdk,  SiVuedotjs, SiNestjs, SiPrisma, SiLaravel, SiLaragon, SiFlutter, SiDotnet, SiPostgresql, SiMysql, SiGit, SiDocker, SiVercel, SiFigma, SiLinux, SiPhp, SiAngular, SiDjango, } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 export type Skill = {
@@ -24,14 +24,19 @@ const categories: SkillCategory[] = [
         { name: "C++", icon: SiCplusplus, color: "#00599C" },
         { name: "PHP", icon: SiPhp, color: "#fb9600" },
     ]},
-    { title: "Frameworks & Libraries", skills: [
+    { title: "Frontend Frameworks", skills: [
         { name: "Next.js", icon: SiNextdotjs, color: "var(--foreground)" },
         { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D" },
+        { name: "Flutter", icon: SiFlutter, color: "#02569B" },
+        { name: "Angular", icon: SiAngular, color: "#61dafb"},
+        { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
+    ]},
+    { title: "Backend Frameworks", skills: [
         { name: "Nest.js", icon: SiNestjs, color: "#E0234E" },
         { name: "Prisma", icon: SiPrisma, color: "#5A67D8" },
         { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
-        { name: "Flutter", icon: SiFlutter, color: "#02569B" },
-       /*  { name: ".NET", icon: SiDotnet, color: "#512BD4" }, */
+        { name: ".NET", icon: SiDotnet, color: "#512BD4" },
+        { name: "Django", icon: SiDjango, color: "#092E20"}
     ]},
     { title: "Databases", skills: [
         { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },

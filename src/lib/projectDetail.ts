@@ -114,7 +114,7 @@ const details: Record<string, ProjectDetail> = {
         ],
         liveUrl: "https://micelhiu-revoshop.netlify.app/"
     },
-    "Portfolio v1.0": {
+    "Portfolio Website v1.0": {
         subtitle: "Bootcamp - 2026",
         overview: "This website is a personal portfolio designed to showcase my projects, skills, and experience as an informatics/computer science student. The site provides information about my background, highlighted projects, and my contact, including contact form for user to get in touch with me.",
         features: [
@@ -205,4 +205,8 @@ const details: Record<string, ProjectDetail> = {
         ],
         liveUrl: "https://kandep-search-engine.streamlit.app/"
     }
+}
+
+export function getProjectDetail(title:string): ProjectDetail | undefined {
+    return details[title];
 }
