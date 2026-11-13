@@ -14,7 +14,7 @@ export type ProjectDetail = {
 const details: Record<string, ProjectDetail> = {
     "CORE - Booking Management Systems": {
         subtitle: "Bootcamp Project - 2026",
-        overview: "CORE is a gaming lounge (warnet) booking platform. It lets customers browse available PC and PS rooms, add a time slot to their cart, apply a promo, and confirm a booking — then track that booking's status or cancel it from their history. Admins get a separate dashboard to manage rooms, promotions, and visitor check-ins.",
+        overview: "CORE (Central Online Recreation Environment) is a web-based internet café management and booking platform designed to simplify room reservations and improve access to gaming facilities. Developed using Next.js, NestJS, and PostgreSQL with Prisma ORM, the application provides an integrated booking system with room management, user authentication, and administrative functionalities. By centralizing these processes, CORE offers a more structured and convenient way for customers to book gaming facilities and for administrators to manage daily operations.",
         features: [
             {
                 title: "Modern & Dynamic UI",
@@ -52,7 +52,7 @@ const details: Record<string, ProjectDetail> = {
 
     "Fintrack API": {
         subtitle: "Bootcamp - 2026",
-        overview: "A simulated financial tracking application for managing income, expenses, and balances across multiple accounts. Developed as a backend practice project using NestJS to strengthen API development and data management skills.",
+        overview: "FinTrack API is a personal finance management backend designed to help users organize their financial activities, including accounts, transactions, and categories. Built with NestJS, Prisma ORM, and PostgreSQL, the application implements a modular Controller-Service-Repository architecture, JWT authentication, and role-based access control to maintain structured business logic and secure resource access. The result is a RESTful API that provides centralized financial data management while ensuring users can only access their own resources.",
         features: [
             {
                 title: "Layered Structure",
@@ -86,7 +86,7 @@ const details: Record<string, ProjectDetail> = {
 
     "Revoshop": {
         subtitle: "Bootcamp - 2026",
-        overview: "Revoshop is a modern e-commerce web platform simulation, designed as a one-stop destination for high-quality products across multiple categories. The website allows users to easily browse and shop for a wide variety of items, ranging from electronics and fashion to home living and sports gear. In addition to being a marketplace for buyers, Revoshop also features a merchant ecosystem that empowers sellers to list their products, reach more customers, and grow their businesses online.",
+        overview: "Revoshop is an e-commerce web platform simulation designed to provide a convenient shopping experience while supporting a multi-vendor marketplace concept. Developed using Next.js, TypeScript, and Tailwind CSS, the application integrates DummyJSON and MockAPI to handle product and user data, alongside features such as product categorization, shopping cart management, authentication, and a dedicated seller portal. The result is an interactive e-commerce platform that demonstrates essential marketplace functionalities and role-based user experiences for customers and sellers.",
         features: [
             {
                 title: "Product Discovery & Catalog",
@@ -116,7 +116,7 @@ const details: Record<string, ProjectDetail> = {
     },
     "Portfolio Website v1.0": {
         subtitle: "Bootcamp - 2026",
-        overview: "This website is a personal portfolio designed to showcase my projects, skills, and experience as an informatics/computer science student. The site provides information about my background, highlighted projects, and my contact, including contact form for user to get in touch with me.",
+        overview: "This personal portfolio website serves as a platform to showcase my background, technical skills, and software development projects. Built using HTML and Vanilla CSS, the website focuses on a clean, responsive, and user-friendly interface with dedicated sections for personal introduction, education, skills, project showcases, and contact information. The result is a centralized platform that presents my professional journey and development experience while making it easier for recruiters and visitors to explore my work and connect with me.",
         features: [
             {
                 title: "Personalized Home Page",
@@ -144,7 +144,7 @@ const details: Record<string, ProjectDetail> = {
 
     "Skin Tone Detector": {
         subtitle: "University - 2025",
-        overview: "Skin Tone Detector is a Streamlit-based web app that detects faces from a photo (upload or camera), then analyzes skin color to classify it into one of four categories — Fair, Light, Medium, or Dark — based on the HSV values of the detected face area. Based on the result, the app shows makeup product recommendations (blush, foundation, lipstick) that match the skin tone.",
+        overview: "SkinTone Detector is a web-based machine learning application developed to analyze university student survey data and generate skin tone-related predictions. Using Python and Streamlit, the application integrates a Random Forest Classifier to process survey data, while Google Colab supports data preparation and analysis. Customized CSS was also implemented to improve the interface and user experience. The result is an interactive application that combines machine learning predictions and data visualization to present analytical findings through an accessible web interface.",
         features: [
             {
                 title: "Skin Tone Description",
@@ -178,7 +178,7 @@ const details: Record<string, ProjectDetail> = {
 
     "Tenant Recommendation": {
         subtitle: "University - 2025",
-        overview: "KANDEP is a tenant recommendation website for the canteen in front of Universitas Kalbis, helping students choose a tenant that matches their preferences. This project was built as a final exam (UAS) assignment.The system uses survey data collected from Universitas Kalbis students (Hasil survey.csv) to train a machine learning model that works as a recommendation/search engine. Users simply enter their study program, budget, and preferred type of food, and the system shows the tenants with the highest relevance.",
+        overview: "The Tenant Recommendation System is a web-based application designed to help students discover food and beverage tenants around Kalbis University based on their preferences. By applying a machine learning-based recommendation approach, the system processes user preferences to generate relevant tenant suggestions and present them through an interactive interface. The result is a recommendation platform that simplifies tenant discovery and helps students explore dining options that better match their interests.",
         features: [
             {
                 title: "Top 3 Tenant Recommendations",
