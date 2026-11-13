@@ -37,11 +37,11 @@ export default function HomeSection() {
                 <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
                     <p className="mb-3 text-base text-secondary sm:mb-4 sm:text-lg">Hey, I&apos;m</p>
 
-                    <h1 className="text-5xl font-bold tracking-tight text-secondary sm:text-6xl">
+                    <h1 className="text-5xl font-bold tracking-tight text-foreground dark:text-secondary sm:text-6xl">
                     Michelle Hiu
                     </h1>
 
-                    <span className="mt-5 text-xl font-semibold text-white sm:mt-6 sm:text-2xl">
+                    <span className="mt-5 text-xl font-semibold text-secondary dark:text-white sm:mt-6 sm:text-2xl">
                         {role}
                         <span className="ml-0.5 inline-block w-0.5 animate-pulse bg-primary align-middle">&nbsp;</span>    
                     </span>
